@@ -16,7 +16,7 @@ module.exports = {
       params: {
         path: "GLM-TTS",
         message: [
-          "powershell -Command \"(Get-Content requirements.txt) | Where-Object { $_ -notmatch '^(torch|torchaudio|torchvision|deepspeed|openai.whisper)==' } | ForEach-Object { $_ -replace 'fastapi==0.123.9', 'fastapi==0.115.12' } | Set-Content requirements.txt\""
+          "powershell -Command \"(Get-Content requirements.txt) | Where-Object { $_ -notmatch '^(torch|torchaudio|torchvision|deepspeed|openai.whisper|WeTextProcessing)==' } | ForEach-Object { $_ -replace 'fastapi==0.123.9', 'fastapi==0.115.12' } | Set-Content requirements.txt\""
         ],
       }
     },
@@ -62,6 +62,17 @@ module.exports = {
         path: "GLM-TTS",
         message: [
           "pip install openai-whisper==20231117"
+        ],
+      }
+    },
+    // Install WeTextProcessing without pynini (pynini cannot be built on Windows via pip)
+    {
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "GLM-TTS",
+        message: [
+          "pip install WeTextProcessing==1.0.3 --no-deps"
         ],
       }
     },
