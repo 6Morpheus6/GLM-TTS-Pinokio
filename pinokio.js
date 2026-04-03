@@ -5,7 +5,7 @@ module.exports = {
   description: "🎙️ Controllable & Emotion-Expressive Zero-shot TTS with Multi-Reward Reinforcement Learning. High-quality text-to-speech synthesis supporting zero-shot voice cloning and streaming inference with natural emotional expression.",
   icon: "icon.jpg",
   menu: async (kernel, info) => {
-    let installed = info.exists("GLM-TTS/env")
+    let installed = info.exists("GLM-TTS/conda_env")
     let running = {
       install: info.running("install.js"),
       start: info.running("start.js"),

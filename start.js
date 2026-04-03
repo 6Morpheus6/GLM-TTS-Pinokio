@@ -5,7 +5,7 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "env",
+        conda: "conda_env",
         path: "GLM-TTS",
         env: { 
           "PYTHONPATH": ".",
