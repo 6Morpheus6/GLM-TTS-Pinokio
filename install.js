@@ -39,7 +39,7 @@ module.exports = {
         venv: "env",
         path: "GLM-TTS",
         message: [
-          "pip install -U setuptools wheel"
+          "pip install -U setuptools wheel Cython"
         ],
       }
     },
